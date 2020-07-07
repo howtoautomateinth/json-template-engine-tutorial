@@ -1,0 +1,26 @@
+{
+  "name": "json-template-engine-tutorial",
+  "version": "1.0.0",
+  "description": "simple usage of json template engine",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/howtoautomateinth/json-template-engine-tutorial.git"
+  },
+  "keywords": [
+    "json",
+    "template-engine"
+  ],
+  "author": "mart@howtoautomate.in.th",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/howtoautomateinth/json-template-engine-tutorial/issues"
+  },
+  "homepage": "https://github.com/howtoautomateinth/json-template-engine-tutorial#readme",
+  "dependencies": {
+    "json-template-engine": "^1.0.17"
+  }
+}
