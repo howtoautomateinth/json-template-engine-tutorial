@@ -14,23 +14,28 @@ const template = {
             iteration: "foo-{{iteration.value}}-{{iteration.index}}"
         }
     },
-    foo3: "{{test}}",
+    testSteps: "{{test}}",
     excludeField: {
         notParsed: "{{qwe}}"
     }
 };
+let jsonArray = [];
 const data = {
     foo2: {
         enable: false
     },
-    test: getTestStep()
+    test: getAllTestStep()
 };
 
-function getTestStep(){
-    return {
-        selector: "div",
-        expected: "IBM.N"
-    };
+function getAllTestStep() {
+    return jsonArray;
+}
+
+function getTestStep(selectorValue, expectedValue) {
+    return jsonArray.push({
+        selector: selectorValue,
+        expected: expectedValue
+    });
 }
 
 async function compileJsonTemplate(template, data, options) {
@@ -51,4 +56,6 @@ const options = {
     exclude: ["excludeField"] // which fields in the object should be excluded (fields will not be parsed), default []
 };
 
+getTestStep("div", "IBM.N");
+getTestStep("div", "Something");
 compileData();
