@@ -14,6 +14,7 @@ const template = {
             iteration: "foo-{{iteration.value}}-{{iteration.index}}"
         }
     },
+    foo3: "{{test}}",
     excludeField: {
         notParsed: "{{qwe}}"
     }
@@ -21,9 +22,16 @@ const template = {
 const data = {
     foo2: {
         enable: false
-    }
+    },
+    test: getTestStep()
 };
 
+function getTestStep(){
+    return {
+        selector: "div",
+        expected: "IBM.N"
+    };
+}
 
 async function compileJsonTemplate(template, data, options) {
     return await JsonParser.compile(template, data, options);
